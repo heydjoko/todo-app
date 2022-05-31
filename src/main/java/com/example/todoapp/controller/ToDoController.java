@@ -36,24 +36,24 @@ public class ToDoController {
     }
 
     @GetMapping("/todoByName/{name}")
-    public ToDo findCourseByName(@PathVariable String name) {
+    public ToDo findToDoByName(@PathVariable String name) {
         return todoService.getToDoByName(name);
     }
 
     @GetMapping("/todoListByUsername/{username}")
-    public List<ToDo> findCoursesByUsername(@PathVariable String username) {
+    public List<ToDo> findToDoByUsername(@PathVariable String username) {
         return todoService.getToDosForUser(username);
     }
 
     @PutMapping("/update")
-    public ToDo updateCourse(@RequestBody ToDo todo)
+    public ToDo updateToDo(@RequestBody ToDo todo)
     {
         System.out.println("UPDATED");
         return todoService.updateToDo(todo);
     }
 
     @DeleteMapping("/delete/{id}")
-    public String deleteCourse(@PathVariable int id) {
+    public String deleteToDo(@PathVariable int id) {
         return todoService.deleteToDo(id);
     }
 }
